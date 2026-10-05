@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brangus Automobilių Supirkimas Vilniuje ir Visoje Lietuvoje — autopila.lt</title>
+<meta name="description" content="Greitas automobilių supirkimas. Perkame visų markių automobilius, su defektais, po avarijos. Atsiskaitome iš karto. Tel: +370 632 63330.">
+<meta name="theme-color" content="#121415">
+<link rel="canonical" href="https://autopila.lt/">
+<meta property="og:title" content="Brangus Automobilių Supirkimas — autopila.lt">
+<meta property="og:description" content="Atsiskaitome vietoje per 15 minučių. Visa Lietuva, 24/7.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["AutoDealer", "LocalBusiness"],
+  "name": "autopila.lt",
+  "url": "https://autopila.lt/",
+  "telephone": "+37063263330",
+  "description": "Greitas ir brangus automobilių supirkimas visoje Lietuvoje. Perkame su defektais, po avarijos, be techninės apžiūros.",
+  "priceRange": "€€",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00", "closes": "23:59"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Vilnius"},
+    {"@type": "City", "name": "Kaunas"},
+    {"@type": "City", "name": "Klaipėda"},
+    {"@type": "Country", "name": "Lithuania"}
+  ],
+  "address": {"@type": "PostalAddress", "addressCountry": "LT", "addressLocality": "Vilnius"}
+}
+</script>
+
+<style>
+:root{
+  --bg:#101213; --bg-2:#171a1c; --bg-3:#1e2224; --line:#2a2f32;
+  --ink:#eef0ee; --mute:#9aa3a6; --logo:#2f3234;
+  --acc:#c6ff3d; --acc-ink:#12160a; --warn:#ffb020;
+  --r:16px; --r-lg:22px;
+  --display:'Manrope',system-ui,sans-serif; --body:'Onest',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--acc);color:var(--acc-ink)}
+a{color:inherit}
+img,svg,video{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:1.02;text-wrap:balance}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.label{font:600 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:var(--r);
+  border:1.5px solid transparent;font:700 16px/1 var(--display);letter-spacing:-.01em;cursor:pointer;text-decoration:none;
+  transition:transform .2s var(--ease),background .2s,border-color .2s,color .2s;color:var(--ink);background:none}
+.btn:active{transform:scale(.97)}
+.btn-acc{background:var(--acc);color:var(--acc-ink)}
+.btn-acc:hover{background:#d8ff6e}
+.btn-ghost{border-color:rgba(255,255,255,.28);background:rgba(16,18,19,.45);backdrop-filter:blur(10px)}
+.btn-ghost:hover{border-color:var(--acc);color:var(--acc)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.msg{display:flex;gap:10px}
+.msg a{width:56px;height:56px;border-radius:var(--r);display:grid;place-items:center;font-size:24px;text-decoration:none;
+  border:1.5px solid rgba(255,255,255,.28);background:rgba(16,18,19,.45);backdrop-filter:blur(10px);transition:.2s var(--ease)}
+.msg a:hover{transform:translateY(-3px)}
+.msg .vb:hover{background:#7360f2;border-color:#7360f2}
+.msg .wa:hover{background:#25d366;border-color:#25d366;color:#08210f}
+.msg .tg:hover{background:#2aabee;border-color:#2aabee}
+
+/* lang */
+.lang{position:absolute;top:22px;right:16px;z-index:5;display:flex;gap:4px;padding:4px;border-radius:14px;background:rgba(16,18,19,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14)}
+.lang button{font:700 12px/1 var(--display);letter-spacing:.08em;color:var(--mute);background:none;border:0;padding:10px 12px;border-radius:10px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:22px 16px 40px;isolation:isolate}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(16,18,19,.78) 0%,rgba(16,18,19,.5) 40%,rgba(16,18,19,.88) 80%,var(--bg) 100%)}
+.logo{display:inline-flex;align-items:center;gap:2px;text-decoration:none;font:800 clamp(30px,5vw,44px)/1 var(--display);letter-spacing:-.05em;margin-top:6px}
+.logo svg{width:.95em;height:.95em;margin-right:2px}
+.logo .dot{color:var(--acc)}
+.hero-mid{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;max-width:1000px;padding:40px 0}
+.hero h1{font-size:clamp(34px,6.4vw,76px);line-height:1.02}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero .sub{margin-top:22px;color:#cfd5d2;font-size:clamp(15px,2vw,19px);max-width:560px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+.cta .btn-acc{min-height:64px;padding:0 36px;font-size:18px}
+.live{display:flex;gap:8px;align-items:center;font-size:13px;color:#cfd5d2;margin-top:18px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 var(--acc);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* ticker */
+.ticker{border-block:1px solid var(--line);background:var(--bg-2);overflow:hidden;padding:16px 0}
+.ticker div{display:flex;gap:56px;width:max-content;animation:tick 38s linear infinite;font:800 22px/1 var(--display);letter-spacing:-.02em;color:var(--mute);text-transform:uppercase}
+.ticker span::after{content:"/";margin-left:56px;color:var(--acc)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{padding:clamp(64px,10vw,130px) 0}
+.sec-h{display:grid;gap:16px;margin-bottom:48px;max-width:760px}
+.sec-h h2{font-size:clamp(32px,5vw,60px)}
+.sec-h p{color:var(--mute);max-width:560px}
+
+/* advantages: bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;backdrop-filter:blur(14px);display:flex;flex-direction:column;gap:14px;transition:border-color .25s}
+.card:hover{border-color:#4a5154}
+.card i.ic{font-size:22px;color:var(--acc)}
+.card h3{font-size:22px;letter-spacing:-.02em;line-height:1.15}
+.card p{color:var(--mute);font-size:15px}
+.big{font:800 clamp(64px,9vw,120px)/.85 var(--display);letter-spacing:-.06em;color:var(--acc)}
+.b1{grid-column:span 3;grid-row:span 2;justify-content:space-between;background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.b1 .big{color:var(--acc-ink)}.b1 p{color:#2c3512}.b1 i.ic{color:var(--acc-ink)}
+.b2{grid-column:span 3}.b3{grid-column:span 3}.b4{grid-column:span 3}.b5{grid-column:span 3}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{padding:7px 12px;border-radius:10px;background:var(--bg-3);border:1px solid var(--line);font-size:13px}
+.contact-strip{margin-top:14px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;
+  padding:22px 28px;border-radius:var(--r-lg);border:1px dashed #3a4144}
+.contact-strip .num{font:800 clamp(24px,3.4vw,34px)/1 var(--display);letter-spacing:-.03em;text-decoration:none}
+.contact-strip small{display:block;color:var(--mute);font-size:13px;margin-top:6px}
+.contact-strip .msg a{width:48px;height:48px;font-size:20px;background:var(--bg-3)}
+.contact-strip .btn{min-height:48px}
+
+/* roulette */
+.game{background:var(--bg-2);border-block:1px solid var(--line);overflow:hidden}
+.game-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,72px);align-items:center}
+.wheel-box{position:relative;width:min(520px,100%);aspect-ratio:1;margin-inline:auto}
+.wheel-box canvas{width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 10px var(--bg-3),0 0 0 11px #3a4144,0 30px 80px rgba(0,0,0,.5)}
+.pin{position:absolute;top:-14px;left:50%;width:34px;height:44px;margin-left:-17px;z-index:2;filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
+.hub{position:absolute;inset:50% auto auto 50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--bg);
+  border:4px solid var(--acc);display:grid;place-items:center;color:var(--acc)}
+.hub svg{width:34px}
+.game h2{font-size:clamp(32px,5vw,58px);margin:16px 0 18px}
+.game p{color:var(--mute);margin-bottom:28px;max-width:440px}
+.fine{font-size:12px;color:var(--mute);margin-top:14px}
+
+/* form */
+.form-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,72px);align-items:start}
+.panel{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,4vw,40px)}
+.steps{display:flex;gap:8px;margin-bottom:28px}
+.steps i{flex:1;height:5px;border-radius:5px;background:var(--bg-3);transition:background .3s}
+.steps i.on{background:var(--acc)}
+.step{display:none;gap:16px}.step.on{display:grid;animation:in .45s var(--ease)}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+.step h3{font-size:24px}
+.f{display:grid;gap:7px}
+.f label,.f legend{font-size:13px;color:var(--mute);font-weight:500}
+input[type=text],input[type=tel],input[type=number],select{width:100%;min-height:54px;padding:0 16px;border-radius:14px;border:1.5px solid var(--line);
+  background:var(--bg);color:var(--ink);font:500 16px var(--body);transition:border-color .2s}
+input:focus,select:focus{outline:none;border-color:var(--acc)}
+input.err{border-color:#ff5d5d}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;border:0;padding:0}
+.opts label{position:relative;cursor:pointer}
+.opts input{position:absolute;opacity:0}
+.opts span{display:flex;align-items:center;gap:10px;min-height:58px;padding:0 16px;border:1.5px solid var(--line);border-radius:14px;font-weight:500;color:var(--ink);transition:.2s}
+.opts input:checked+span{border-color:var(--acc);background:rgba(198,255,61,.08)}
+.opts input:focus-visible+span{outline:2px solid var(--acc);outline-offset:2px}
+.drop{display:flex;align-items:center;gap:12px;min-height:64px;padding:0 16px;border:1.5px dashed #465053;border-radius:14px;cursor:pointer;color:var(--mute);transition:.2s}
+.drop:hover{border-color:var(--acc);color:var(--ink)}
+.drop input{display:none}
+.nav{display:flex;gap:10px;margin-top:8px}
+.nav .btn{flex:1}.nav .btn-ghost{flex:0 0 auto;background:var(--bg-3)}
+.ok{display:none;text-align:center;padding:30px 0}
+.ok i{font-size:44px;color:var(--acc);margin-bottom:14px}
+.ok h3{font-size:28px;margin-bottom:8px}.ok p{color:var(--mute)}
+.proofs{display:grid;gap:22px;margin-top:30px}
+.proofs li{list-style:none;display:grid;grid-template-columns:44px 1fr;gap:4px 14px;align-items:start}
+.proofs b{font:800 28px/1 var(--display);color:var(--acc);grid-row:span 2}
+.proofs span{color:var(--mute);font-size:15px}
+
+/* compare */
+.tbl{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:20px 22px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+th{font:700 14px var(--display);color:var(--mute);background:var(--bg-2)}
+td:first-child{font-weight:600}
+th.us,td.us{background:rgba(198,255,61,.07);color:var(--ink)}
+th.us{color:var(--acc);font-size:16px}
+tr:last-child td{border-bottom:0}
+.y{color:var(--acc)}.n{color:#ff6b6b}.m{color:var(--warn)}
+td i{margin-right:8px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:70px}
+.gh{grid-column:1/-1;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:6px}
+.gh h2{font-size:clamp(28px,4vw,46px)}
+.gh small{color:var(--mute);max-width:320px}
+.car{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:var(--bg-2)}
+.car .ph{aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#1b1f21 0 12px,#1f2427 12px 24px);display:grid;place-items:center;color:#4b5559;position:relative}
+.car .ph svg{width:62%}
+.car .ph em{position:absolute;left:10px;top:10px;font:600 10px var(--body);letter-spacing:.12em;text-transform:uppercase;padding:5px 8px;border-radius:8px;background:var(--bg);color:var(--mute);font-style:normal}
+.car .in{padding:16px 18px}
+.car h3{font-size:18px;letter-spacing:-.02em}
+.car .meta{display:flex;justify-content:space-between;margin-top:10px;font-size:13px;color:var(--mute)}
+.car .meta b{color:var(--acc);font-weight:600}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--bg-2);padding:64px 0 36px}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.seo h2{font-size:22px;letter-spacing:-.02em;margin-bottom:14px}
+.seo p{color:var(--mute);font-size:14px;margin-bottom:12px}
+.seo strong{color:var(--ink);font-weight:500}
+.kw{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.kw span{font-size:12px;padding:7px 11px;border-radius:10px;border:1px solid var(--line);color:var(--mute)}
+.fc{display:grid;gap:14px;align-content:start}
+.fc .num{font:800 34px/1 var(--display);letter-spacing:-.03em;text-decoration:none}
+.copy{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);color:var(--mute);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:16px;background:rgba(8,9,10,.78);backdrop-filter:blur(8px)}
+.modal.open{display:grid}
+.mbox{width:min(460px,100%);background:var(--bg-2);border:1px solid #3a4144;border-radius:24px;padding:32px;position:relative;animation:in .4s var(--ease)}
+.mbox .x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:12px;border:0;background:var(--bg-3);color:var(--ink);cursor:pointer;font-size:16px}
+.prize{font:800 clamp(34px,8vw,48px)/1 var(--display);letter-spacing:-.04em;color:var(--acc);margin:12px 0 10px}
+.mbox p{color:var(--mute);margin-bottom:18px}
+.mbox form{display:grid;gap:12px}
+.fab{position:fixed;right:14px;bottom:14px;z-index:60;display:none}
+@media(max-width:760px){.fab{display:flex}}
+
+@media(max-width:900px){
+  .game-grid,.form-wrap,.fgrid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .b1,.b2,.b3,.b4,.b5{grid-column:span 6}
+}
+@media(max-width:520px){
+  .row,.opts{grid-template-columns:1fr}
+  .cta{flex-direction:column;width:100%}.cta .btn-acc,.cta>.btn{width:100%}
+  .gal{grid-template-columns:1fr}
+  .lang{top:14px}
+  .hero{padding-top:14px}
+  .logo{margin-top:50px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <video autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="hero.mp4" type="video/mp4"></video>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="lt" aria-pressed="true">LT</button><button data-l="ru" aria-pressed="false">RU</button><button data-l="en" aria-pressed="false">EN</button>
+  </div>
+
+  <a class="logo" href="#" aria-label="autopila.lt">
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M4 42C9 24 24 14 42 20" stroke="#eef0ee" stroke-width="7" stroke-linecap="round"/><path d="M30 6l16 14-14 14z" fill="#c6ff3d"/></svg>utopila<span class="dot">.lt</span>
+  </a>
+
+  <div class="hero-mid">
+    <h1 data-i18n="h1"></h1>
+    <p class="sub" data-i18n="sub"></p>
+  </div>
+
+  <div class="cta">
+    <a class="btn btn-acc" href="#forma" data-i18n="cta1"></a>
+    <a class="btn btn-ghost" href="tel:+37063263330"><i class="fa-solid fa-phone"></i><span data-i18n="cta2"></span></a>
+    <div class="msg">
+      <a class="vb" href="viber://chat?number=%2B37063263330" aria-label="Viber" target="_blank" rel="noopener"><i class="fa-brands fa-viber"></i></a>
+      <a class="wa" href="https://wa.me/37063263330" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="tg" href="https://t.me/+37063263330" aria-label="Telegram" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i></a>
+    </div>
+  </div>
+  <p class="live"><i></i><span data-i18n="live"></span></p>
+</header>
+
+<div class="ticker" aria-hidden="true"><div id="tick"></div></div>
+
+<main>
+<!-- ADVANTAGES -->
+<section id="kodel">
+  <div class="wrap">
+    <div class="sec-h"><span class="label" data-i18n="why_l"></span><h2 data-i18n="why_h"></h2></div>
+    <div class="bento">
+      <article class="card b1"><i class="ic fa-solid fa-stopwatch"></i><div class="big">15<small style="font-size:.35em;letter-spacing:-.02em"> min</small></div><div><h3 data-i18n="a1h"></h3><p data-i18n="a1p"></p></div></article>
+      <article class="card b2"><i class="ic fa-solid fa-euro-sign"></i><h3 data-i18n="a2h"></h3><p data-i18n="a2p"></p></article>
+      <article class="card b3"><i class="ic fa-solid fa-truck-pickup"></i><h3 data-i18n="a5h"></h3><p data-i18n="a5p"></p></article>
+      <article class="card b4"><i class="ic fa-solid fa-car-burst"></i><h3 data-i18n="a3h"></h3><div class="tags" id="tags"></div></article>
+      <article class="card b5"><i class="ic fa-solid fa-file-signature"></i><h3 data-i18n="a4h"></h3><p data-i18n="a4p"></p></article>
+    </div>
+    <div class="contact-strip">
+      <div><a class="num" href="tel:+37063263330">+370 632 63330</a><small data-i18n="hours"></small></div>
+      <div class="msg">
+        <a class="vb" href="viber://chat?number=%2B37063263330" aria-label="Viber"><i class="fa-brands fa-viber"></i></a>
+        <a class="wa" href="https://wa.me/37063263330" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a class="tg" href="https://t.me/+37063263330" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROULETTE -->
+<section class="game" id="ruletė">
+  <div class="wrap game-grid">
+    <div class="wheel-box">
+      <svg class="pin" viewBox="0 0 34 44"><path d="M17 44L2 14A17 17 0 1 1 32 14z" fill="#c6ff3d"/><circle cx="17" cy="15" r="6" fill="#101213"/></svg>
+      <canvas id="wheel" width="1040" height="1040" aria-label="Prize wheel"></canvas>
+      <div class="hub"><svg viewBox="0 0 48 48" fill="none"><path d="M4 42C9 24 24 14 42 20" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M30 6l16 14-14 14z" fill="currentColor"/></svg></div>
+    </div>
+    <div>
+      <span class="label" data-i18n="g_l"></span>
+      <h2 data-i18n="g_h"></h2>
+      <p data-i18n="g_p"></p>
+      <button class="btn btn-acc" id="spin"><i class="fa-solid fa-rotate"></i><span data-i18n="g_btn"></span></button>
+      <p class="fine" data-i18n="g_fine"></p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="forma">
+  <div class="wrap form-wrap">
+    <div>
+      <span class="label" data-i18n="f_l"></span>
+      <h2 style="font-size:clamp(32px,5vw,58px);margin:16px 0 18px" data-i18n="f_h"></h2>
+      <p style="color:var(--mute)" data-i18n="f_p"></p>
+      <ul class="proofs">
+        <li><b>1</b><strong data-i18n="p1h"></strong><span data-i18n="p1p"></span></li>
+        <li><b>2</b><strong data-i18n="p2h"></strong><span data-i18n="p2p"></span></li>
+        <li><b>3</b><strong data-i18n="p3h"></strong><span data-i18n="p3p"></span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <form id="lead" novalidate>
+        <div class="steps"><i class="on"></i><i></i><i></i></div>
+        <div class="step on" data-s="1">
+          <h3 data-i18n="s1"></h3>
+          <div class="row">
+            <div class="f"><label for="make" data-i18n="make"></label><input id="make" name="make" type="text" required autocomplete="off" placeholder="BMW"></div>
+            <div class="f"><label for="model" data-i18n="model"></label><input id="model" name="model" type="text" required autocomplete="off" placeholder="320d"></div>
+          </div>
+          <div class="f"><label for="year" data-i18n="year"></label><input id="year" name="year" type="number" min="1980" max="2026" required inputmode="numeric" placeholder="2012"></div>
+        </div>
+        <div class="step" data-s="2">
+          <h3 data-i18n="s2"></h3>
+          <fieldset class="opts">
+            <label><input type="radio" name="cond" value="Puiki" checked><span>★ <b data-i18n="c1" style="font-weight:500"></b></span></label>
+            <label><input type="radio" name="cond" value="Su defektais"><span>⚙ <b data-i18n="c2" style="font-weight:500"></b></span></label>
+            <label><input type="radio" name="cond" value="Po avarijos"><span>⚠ <b data-i18n="c3" style="font-weight:500"></b></span></label>
+            <label><input type="radio" name="cond" value="Nevažiuojantis"><span>✕ <b data-i18n="c4" style="font-weight:500"></b></span></label>
+          </fieldset>
+        </div>
+        <div class="step" data-s="3">
+          <h3 data-i18n="s3"></h3>
+          <label class="drop" for="photo"><i class="fa-solid fa-camera"></i><span id="fname" data-i18n="photo"></span><input id="photo" type="file" accept="image/*" multiple></label>
+          <div class="f"><label for="phone" data-i18n="phone"></label><input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="+370 6__ _____"></div>
+        </div>
+        <div class="nav">
+          <button type="button" class="btn btn-ghost" id="back" hidden aria-label="Back"><i class="fa-solid fa-arrow-left"></i></button>
+          <button type="button" class="btn btn-acc" id="next"><span data-i18n="next"></span><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <input type="hidden" name="bonus" id="bonusField">
+      </form>
+      <div class="ok" id="ok"><i class="fa-solid fa-circle-check"></i><h3 data-i18n="ok_h"></h3><p data-i18n="ok_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE + GALLERY -->
+<section id="palyginimas" style="background:var(--bg-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-h"><span class="label" data-i18n="cmp_l"></span><h2 data-i18n="cmp_h"></h2></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th></th><th data-i18n="col1"></th><th data-i18n="col2"></th><th class="us">autopila.lt</th></tr></thead>
+        <tbody id="cmp"></tbody>
+      </table>
+    </div>
+
+    <div class="gal" id="gal">
+      <div class="gh"><h2 data-i18n="gal_h"></h2><small data-i18n="gal_n"></small></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="seo">
+        <h2>Automobilių supirkimas Vilnius, Kaunas, Klaipėda ir visa Lietuva</h2>
+        <p><strong>Automobilių supirkimas Vilniuje</strong> — autopila.lt perka visų markių ir modelių automobilius greitai ir už rinkos kainą. Atvykstame į jūsų nurodytą vietą, įvertiname automobilį ir <strong>atsiskaitome iš karto</strong> grynaisiais arba pavedimu.</p>
+        <p><strong>Mašinų supirkimas</strong> visoje Lietuvoje: naudoti automobiliai, <strong>daužtų auto supirkimas</strong>, automobiliai be techninės apžiūros, nevažiuojantys, su variklio ar pavarų dėžės defektais, atvežti iš užsienio. Pasirūpiname dokumentais, deklaracijomis ir išregistravimu.</p>
+        <p><strong>Auto supirkimas visoje Lietuvoje</strong> — nemokamas nuvežimas savo autovežiu. <strong>Naudotų automobilių pirkimas</strong> be tarpininkų ir paslėptų mokesčių.</p>
+        <div class="kw"><span>automobilių supirkimas Vilnius</span><span>mašinų supirkimas</span><span>auto supirkimas visoje Lietuvoje</span><span>naudotų automobilių pirkimas</span><span>daužtų auto supirkimas</span><span>supirkimas Kaunas</span><span>supirkimas Klaipėda</span></div>
+      </div>
+      <div class="fc">
+        <span class="label" data-i18n="hours"></span>
+        <a class="num" href="tel:+37063263330">+370 632 63330</a>
+        <div class="msg">
+          <a class="vb" href="viber://chat?number=%2B37063263330" aria-label="Viber" style="background:var(--bg-3)"><i class="fa-brands fa-viber"></i></a>
+          <a class="wa" href="https://wa.me/37063263330" aria-label="WhatsApp" style="background:var(--bg-3)"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="tg" href="https://t.me/+37063263330" aria-label="Telegram" style="background:var(--bg-3)"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+        <p style="color:var(--mute);font-size:14px">Vilnius · Kaunas · Klaipėda · Šiauliai · Panevėžys</p>
+      </div>
+    </div>
+    <div class="copy"><span>© 2026 autopila.lt</span><span>Automobilių supirkimas Lietuvoje</span></div>
+  </div>
+</footer>
+
+<a class="btn btn-acc fab" href="tel:+37063263330" aria-label="Call"><i class="fa-solid fa-phone"></i><span data-i18n="cta2"></span></a>
+
+<!-- BONUS MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="prize">
+  <div class="mbox">
+    <button class="x" id="mx" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <span class="label" data-i18n="m_l"></span>
+    <div class="prize" id="prize"></div>
+    <p data-i18n="m_p"></p>
+    <form id="bform" novalidate>
+      <input id="bmake" type="text" placeholder="BMW 320d, 2012" required aria-label="Car">
+      <input id="bphone" type="tel" placeholder="+370 6__ _____" required aria-label="Phone" inputmode="tel">
+      <button class="btn btn-acc" type="submit"><span data-i18n="m_btn"></span></button>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ---------- CONFIG ---------- */
+const PHONE = '37063263330';
+const ENDPOINT = ''; // e.g. Formspree URL: https://formspree.io/f/xxxx — if empty, lead opens in WhatsApp
+
+/* ---------- I18N ---------- */
+const T = {
+lt:{
+ h1:'Greitas ir brangus automobilių supirkimas visoje Lietuvoje. <em>Atsiskaitome vietoje per 15 minučių!</em>',
+ sub:'Atvažiuojame pas jus, įvertiname ir sutvarkome dokumentus. Su defektais, po avarijos, be techninės.',
+ cta1:'Gauti pasiūlymą', cta2:'Skambinti dabar', live:'Dirbame 24/7 · Vilnius, Kaunas, Klaipėda ir visa Lietuva',
+ why_l:'Kodėl autopila', why_h:'Be derybų maratonų ir tarpininkų.',
+ a1h:'Supirkimas per 15–30 minučių', a1p:'Bet kurioje Vilniaus ar Lietuvos vietoje. Paskambinkite – atvažiuojame.',
+ a2h:'Atsiskaitome vietoje', a2p:'Grynaisiais arba pavedimu iš karto, pasirašius sutartį.',
+ a3h:'Perkame bet kokios būklės', a4h:'Dokumentai vietoje', a4p:'SDK kodai, deklaracijos, išregistravimas – viskuo pasirūpiname.',
+ a5h:'Nemokamas autovežis', a5p:'Savo evakuatoriumi pasiimame automobilį patys.',
+ tags:['Su defektais','Po avarijos','Be techninės','Nevažiuojantis','Variklio / KPP defektai','Iš užsienio'],
+ hours:'Dirbame 24/7',
+ g_l:'Premijos ruletė', g_h:'Sukite ir gaukite premiją prie kainos.', g_p:'Vienas sukimas – vienas bonusas jūsų automobiliui. Užfiksuokite jį telefonu.',
+ g_btn:'Sukti ir sužinoti premiją', g_fine:'Bonusas taikomas patvirtinus galutinę automobilio kainą.',
+ m_l:'Jūsų premija', m_p:'Užfiksuokite bonusą – įveskite automobilio markę ir telefoną.', m_btn:'Užfiksuoti bonusą',
+ f_l:'Greita kaina', f_h:'Trys žingsniai iki pasiūlymo.', f_p:'Užpildykite formą – atsakysime per 5 minutes.',
+ p1h:'Aprašote automobilį', p1p:'Marka, modelis, metai ir būklė.', p2h:'Gaunate kainą', p2p:'Per 5 minutes skambiname ar rašome.', p3h:'Atvažiuojame ir atsiskaitome', p3p:'Dokumentai ir pinigai – vietoje.',
+ s1:'Automobilis', make:'Markė', model:'Modelis', year:'Pagaminimo metai',
+ s2:'Būklė', c1:'Puiki', c2:'Su defektais', c3:'Po avarijos', c4:'Nevažiuojantis',
+ s3:'Nuotrauka ir telefonas', photo:'Pridėti automobilio nuotrauką', phone:'Telefono numeris',
+ next:'Toliau', send:'Gauti pasiūlymą', ok_h:'Gavome jūsų užklausą', ok_p:'Susisieksime per 5 minutes.',
+ cmp_l:'Palyginimas', cmp_h:'Kodėl ne skelbimas ir ne perpardavėjas.', col1:'Pardavimas patiems', col2:'Perpardavėjams',
+ cmp:[['Greitis','Savaitės ar mėnesiai','1–3 dienos','15–30 min.'],['Kaina','Aukšta, bet ilgai laukti','Žemiausia','Aukšta rinkos kaina'],['Saugumas','Nepažįstami lankytojai, sukčiai','Priklauso nuo pirkėjo','Sutartis ir atsiskaitymas vietoje'],['Dokumentai','Tvarkote patys','Dažnai patys','Sutvarkome mes'],['Bet kokia būklė','Sunku parduoti','Su nuolaida','Perkame visus']],
+ gal_h:'Neseniai supirkti', gal_n:'Pavyzdiniai kortelių duomenys – pakeiskite tikrais automobiliais ir kainomis.'
+},
+ru:{
+ h1:'Быстрый и дорогой выкуп автомобилей по всей Литве. <em>Рассчитываемся на месте за 15 минут!</em>',
+ sub:'Приезжаем к вам, оцениваем и оформляем документы. С дефектами, после ДТП, без техосмотра.',
+ cta1:'Узнать цену', cta2:'Позвонить', live:'Работаем 24/7 · Вильнюс, Каунас, Клайпеда и вся Литва',
+ why_l:'Почему autopila', why_h:'Без долгих торгов и посредников.',
+ a1h:'Выкуп за 15–30 минут', a1p:'В любой точке Вильнюса и Литвы. Позвоните — мы выезжаем.',
+ a2h:'Расчёт на месте', a2p:'Наличными или переводом сразу после подписания договора.',
+ a3h:'Покупаем в любом состоянии', a4h:'Документы на месте', a4p:'SDK-коды, декларации, снятие с учёта — всё берём на себя.',
+ a5h:'Бесплатный эвакуатор', a5p:'Заберём авто собственным эвакуатором.',
+ tags:['С дефектами','После ДТП','Без T.O.','Не на ходу','Дефекты двигателя / КПП','Из-за границы'],
+ hours:'Работаем 24/7',
+ g_l:'Рулетка бонусов', g_h:'Крутите и получите бонус к цене.', g_p:'Одно вращение — один бонус для вашего авто. Зафиксируйте его по телефону.',
+ g_btn:'Крутить рулетку', g_fine:'Бонус применяется после подтверждения итоговой цены авто.',
+ m_l:'Ваш бонус', m_p:'Зафиксируйте бонус — введите марку авто и телефон.', m_btn:'Зафиксировать бонус',
+ f_l:'Быстрая оценка', f_h:'Три шага до предложения.', f_p:'Заполните форму — ответим в течение 5 минут.',
+ p1h:'Описываете авто', p1p:'Марка, модель, год и состояние.', p2h:'Получаете цену', p2p:'Через 5 минут звоним или пишем.', p3h:'Приезжаем и платим', p3p:'Документы и деньги — на месте.',
+ s1:'Автомобиль', make:'Марка', model:'Модель', year:'Год выпуска',
+ s2:'Состояние', c1:'Отличное', c2:'Есть дефекты', c3:'После ДТП', c4:'Не на ходу',
+ s3:'Фото и телефон', photo:'Прикрепить фото авто', phone:'Номер телефона',
+ next:'Далее', send:'Получить предложение', ok_h:'Заявка получена', ok_p:'Свяжемся в течение 5 минут.',
+ cmp_l:'Сравнение', cmp_h:'Почему не объявление и не перекупщик.', col1:'Продажа самому', col2:'Перекупщикам',
+ cmp:[['Скорость','Недели или месяцы','1–3 дня','15–30 мин.'],['Цена','Высокая, но долго ждать','Самая низкая','Высокая рыночная'],['Безопасность','Незнакомцы, мошенники','Зависит от покупателя','Договор и расчёт на месте'],['Документы','Оформляете сами','Часто сами','Оформляем мы'],['Любое состояние','Трудно продать','Со скидкой','Берём любое']],
+ gal_h:'Недавно выкупили', gal_n:'Примерные данные карточек — замените реальными авто и ценами.'
+},
+en:{
+ h1:'Fast, top-price car buying across Lithuania. <em>We pay on the spot in 15 minutes!</em>',
+ sub:'We come to you, appraise the car and handle the paperwork. Damaged, after accidents, no inspection.',
+ cta1:'Get an offer', cta2:'Call now', live:'Open 24/7 · Vilnius, Kaunas, Klaipėda and all of Lithuania',
+ why_l:'Why autopila', why_h:'No haggling marathons, no middlemen.',
+ a1h:'Bought in 15–30 minutes', a1p:'Anywhere in Vilnius or Lithuania. Call — we come to you.',
+ a2h:'Paid on the spot', a2p:'Cash or bank transfer right after signing.',
+ a3h:'Any condition accepted', a4h:'Paperwork on site', a4p:'SDK codes, declarations, deregistration — we handle it all.',
+ a5h:'Free tow truck', a5p:'We collect the car with our own tow truck.',
+ tags:['With defects','After accident','No inspection','Not running','Engine / gearbox faults','Imported'],
+ hours:'Open 24/7',
+ g_l:'Bonus wheel', g_h:'Spin and win a bonus on your price.', g_p:'One spin, one bonus for your car. Lock it in with your phone number.',
+ g_btn:'Spin the wheel', g_fine:'Bonus applies once the final car price is confirmed.',
+ m_l:'Your bonus', m_p:'Lock in your bonus — enter your car and phone number.', m_btn:'Lock in bonus',
+ f_l:'Quick quote', f_h:'Three steps to an offer.', f_p:'Fill in the form — we reply within 5 minutes.',
+ p1h:'Describe the car', p1p:'Make, model, year and condition.', p2h:'Get a price', p2p:'We call or message in 5 minutes.', p3h:'We arrive and pay', p3p:'Paperwork and cash — on site.',
+ s1:'Your car', make:'Make', model:'Model', year:'Year',
+ s2:'Condition', c1:'Excellent', c2:'Has defects', c3:'After accident', c4:'Not running',
+ s3:'Photo and phone', photo:'Attach a car photo', phone:'Phone number',
+ next:'Next', send:'Get my offer', ok_h:'Request received', ok_p:'We will contact you within 5 minutes.',
+ cmp_l:'Comparison', cmp_h:'Why not a listing, and not a reseller.', col1:'Private sale', col2:'To resellers',
+ cmp:[['Speed','Weeks or months','1–3 days','15–30 min.'],['Price','High, but slow','Lowest','High market price'],['Safety','Strangers, scams','Depends on buyer','Contract and on-site payment'],['Paperwork','You handle it','Often you','We handle it'],['Any condition','Hard to sell','Discounted','We buy all']],
+ gal_h:'Recently bought', gal_n:'Sample card data — replace with real cars and prices.'
+}};
+let lang='lt';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+
+function setLang(l){
+  lang=l; const d=T[l]; document.documentElement.lang=l;
+  $$('[data-i18n]').forEach(e=>{const v=d[e.dataset.i18n]; if(v!==undefined) e.innerHTML=v;});
+  $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+  $('#tags').innerHTML=d.tags.map(t=>`<span>${t}</span>`).join('');
+  $('#cmp').innerHTML=d.cmp.map(r=>`<tr><td>${r[0]}</td><td><i class="fa-solid fa-xmark n"></i>${r[1]}</td><td><i class="fa-solid fa-minus m"></i>${r[2]}</td><td class="us"><i class="fa-solid fa-circle-check y"></i>${r[3]}</td></tr>`).join('');
+  drawWheel(rot); updateNext(); drawWheel(rot);
+}
+$$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+
+/* ticker */
+const brands=['BMW','Audi','Toyota','Mercedes-Benz','Volkswagen','Škoda','Volvo','Opel','Ford','Honda','Lexus','Peugeot'];
+$('#tick').innerHTML=[...brands,...brands].map(b=>`<span>${b}</span>`).join('');
+
+/* gallery (placeholders) */
+const car='<svg viewBox="0 0 200 90" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M10 66V52l22-6 26-24h62l28 24 32 6v14"/><path d="M58 22l-8 24M120 22l8 24M50 46h86"/><circle cx="52" cy="68" r="12" fill="#171a1c"/><circle cx="150" cy="68" r="12" fill="#171a1c"/></svg>';
+[['BMW 320d','2012'],['Audi A4','2009'],['VW Passat','2014'],['Toyota Avensis','2010']].forEach(c=>{
+  $('#gal').insertAdjacentHTML('beforeend',`<article class="car"><div class="ph">${car}<em>Pavyzdys</em></div><div class="in"><h3>${c[0]} · ${c[1]}</h3><div class="meta"><span>[kaina] €</span><b>[__] min</b></div></div></article>`);
+});
+
+/* ---------- WHEEL ---------- */
+const prizes=[
+ {t:'+50 €',c:'#1e2224'},{t:'+100 €',c:'#c6ff3d',dark:1},{t:'Evakuatorius',c:'#2a2f32'},{t:'+150 €',c:'#1e2224'},
+ {t:'+75 €',c:'#2a2f32'},{t:'+200 €',c:'#c6ff3d',dark:1},{t:'Ekspres',c:'#1e2224'},{t:'+100 €',c:'#2a2f32'}];
+const pt={ // translated prize names
+ lt:{'Evakuatorius':'Nemokamas evakuatorius','Ekspres':'Ekspres įvertinimas'},
+ ru:{'Evakuatorius':'Бесплатный эвакуатор','Ekspres':'Экспресс-оценка'},
+ en:{'Evakuatorius':'Free tow truck','Ekspres':'Express appraisal'}};
+const short={lt:{'Evakuatorius':'Evakuatorius','Ekspres':'Ekspres'},ru:{'Evakuatorius':'Эвакуатор','Ekspres':'Экспресс'},en:{'Evakuatorius':'Free tow','Ekspres':'Express'}};
+const cv=$('#wheel'), cx=cv.getContext('2d'); let rot=0;
+function drawWheel(a){
+  const S=cv.width,R=S/2,n=prizes.length,w=Math.PI*2/n;
+  cx.clearRect(0,0,S,S); cx.save(); cx.translate(R,R); cx.rotate(a);
+  prizes.forEach((p,i)=>{
+    cx.beginPath(); cx.moveTo(0,0); cx.arc(0,0,R-6,i*w-w/2-Math.PI/2,i*w+w/2-Math.PI/2); cx.closePath();
+    cx.fillStyle=p.c; cx.fill(); cx.strokeStyle='#101213'; cx.lineWidth=4; cx.stroke();
+    cx.save(); cx.rotate(i*w); cx.textAlign='right'; cx.textBaseline='middle';
+    cx.fillStyle=p.dark?'#12160a':'#eef0ee'; cx.font='800 64px Manrope, sans-serif';
+    const label=(short[lang][p.t]||p.t);
+    cx.translate(0,-R*.2); cx.rotate(-Math.PI/2); cx.fillText(label,R*.8,0); cx.restore();
+  });
+  cx.restore();
+}
+let ac; function tick(){ try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); const o=ac.createOscillator(),g=ac.createGain();
+  o.type='square'; o.frequency.value=900; g.gain.value=.03; g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+.05); o.connect(g); g.connect(ac.destination); o.start(); o.stop(ac.currentTime+.05);}catch(e){} }
+let spinning=false;
+$('#spin').onclick=()=>{
+  if(spinning) return; spinning=true; $('#spin').disabled=true;
+  const n=prizes.length, w=Math.PI*2/n, win=Math.floor(Math.random()*n);
+  const start=rot, target=start+Math.PI*2*6 + ((-win*w - start)%(Math.PI*2)+Math.PI*2)%(Math.PI*2);
+  const dur=5200, t0=performance.now(); let lastSeg=-1;
+  (function f(now){
+    const k=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-k,4);
+    rot=start+(target-start)*e; drawWheel(rot);
+    const seg=Math.floor(((-rot)/w+.5)); if(seg!==lastSeg){lastSeg=seg;tick();}
+    if(k<1) requestAnimationFrame(f); else done(win);
+  })(t0);
+};
+function done(i){
+  spinning=false; $('#spin').disabled=false;
+  const p=prizes[i], name=pt[lang][p.t]||p.t;
+  $('#prize').textContent=name; $('#bonusField').value=name; openModal();
+}
+function openModal(){$('#modal').classList.add('open');setTimeout(()=>$('#bmake').focus(),50)}
+function closeModal(){$('#modal').classList.remove('open')}
+$('#mx').onclick=closeModal; $('#modal').onclick=e=>{if(e.target.id==='modal')closeModal()};
+addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* ---------- LEADS ---------- */
+async function sendLead(data, photos){
+  const text=Object.entries(data).filter(([,v])=>v).map(([k,v])=>`${k}: ${v}`).join('\n');
+  if(ENDPOINT){
+    const fd=new FormData(); Object.entries(data).forEach(([k,v])=>fd.append(k,v));
+    (photos||[]).forEach(f=>fd.append('photo',f));
+    try{ await fetch(ENDPOINT,{method:'POST',body:fd,headers:{Accept:'application/json'}}); return; }catch(e){}
+  }
+  window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent('autopila.lt\n'+text)}`,'_blank','noopener');
+}
+const okPhone=v=>v.replace(/\D/g,'').length>=8;
+
+$('#bform').onsubmit=async e=>{
+  e.preventDefault(); const m=$('#bmake'),p=$('#bphone');
+  m.classList.toggle('err',!m.value.trim()); p.classList.toggle('err',!okPhone(p.value));
+  if(!m.value.trim()||!okPhone(p.value)) return;
+  await sendLead({Bonus:$('#prize').textContent,Auto:m.value,Telefonas:p.value});
+  closeModal(); $('#bform').reset();
+  $('#make').value=m.value; // carry over
+  location.hash='#forma';
+};
+
+let step=1;
+function updateNext(){
+  $$('.step').forEach(s=>s.classList.toggle('on',+s.dataset.s===step));
+  $$('.steps i').forEach((b,i)=>b.classList.toggle('on',i<step));
+  $('#back').hidden=step===1;
+  $('#next span').dataset.i18n=step===3?'send':'next'; $('#next span').textContent=T[lang][step===3?'send':'next'];
+}
+function valid(){
+  const need={1:['#make','#model','#year'],3:['#phone']}[step]||[]; let ok=true;
+  need.forEach(s=>{const el=$(s); const bad=s==='#phone'?!okPhone(el.value):!el.value.trim(); el.classList.toggle('err',bad); if(bad) ok=false;});
+  return ok;
+}
+$('#back').onclick=()=>{step--;updateNext()};
+$('#next').onclick=async()=>{
+  if(!valid()) return;
+  if(step<3){step++;updateNext();return;}
+  const f=$('#photo').files;
+  await sendLead({Marke:$('#make').value,Modelis:$('#model').value,Metai:$('#year').value,Bukle:document.querySelector('[name=cond]:checked').value,Telefonas:$('#phone').value,Bonusas:$('#bonusField').value,Nuotraukos:f.length?f.length+' vnt. (atsiųsime atskirai)':''},[...f]);
+  $('#lead').style.display='none'; $('#ok').style.display='block';
+};
+$('#photo').onchange=e=>{const n=e.target.files.length; if(n) $('#fname').textContent=n+' ✓'};
+
+setLang('lt');
+</script>
+</body>
+</html>
